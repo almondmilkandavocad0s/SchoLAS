@@ -1,1 +1,4 @@
 .venv
+.env
+rag_corpus/
+__pycache__/
