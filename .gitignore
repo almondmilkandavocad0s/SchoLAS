@@ -2,3 +2,4 @@
 .env
 rag_corpus/
 __pycache__/
+prompt.txt
