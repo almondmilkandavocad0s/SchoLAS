@@ -59,6 +59,9 @@ if st.session_state.answer:
     st.subheader("Response: ")
     st.write(st.session_state.answer)
 
+st.divider()
+st.write("\n 👇 If you would like to upload your own materials, please attach them below and hit 'Ingest PDF' to add context to the LLM.")
+
 uploaded_file = st.file_uploader("Upload a PDF", type="pdf", key="upload_pdf")
 
 if uploaded_file is not None:
@@ -99,9 +102,6 @@ if st.session_state.hits:
     st.subheader("Top Matches")
     for i, (_, meta, score) in enumerate(st.session_state.hits, 1):
         st.write(f"[{i}] {meta['source_file']} p.{meta['page_number']} — score={score:.3f}")
-
-
-
 
 # Cached questions: 
 # What are the implications of GenAI in Teaching and Learning?
