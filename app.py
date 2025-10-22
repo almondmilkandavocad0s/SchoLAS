@@ -105,4 +105,4 @@ if st.session_state.hits:
 
 # Cached questions: 
 # What are the implications of GenAI in Teaching and Learning?
-
+# How is human creativity related to Learning Analytics? 
