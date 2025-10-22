@@ -4,3 +4,4 @@ rag_corpus/
 __pycache__/
 prompt.txt
 data/
+uploaded_pdfs/
