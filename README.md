@@ -33,17 +33,17 @@ This is the core of the project, which will be built using a Retrieval-Augmented
 ### 3. Front-End (Interface)
 
 * **Tool:** A simple, user-friendly web interface will be built using `Streamlit`.
-* **Function:** This will provide a chat-like text box where users can ask questions (e.g., "What are the latest findings on student engagement in JLA?") and receive the LLM's generated answer.
+* **Function:** This will provide a chat-like text box where users can ask questions (e.g., "What are the latest findings on student engagement in JLA?") and receive the LLM's generated answer. Users can also upload their own sources to be used in the LLM's question-answering. 
 
 ---
 
 ## Core Technologies
 
-* **Python 3.x**
+* **Python**: Version 3.12
 * **Web Scraping:** `BeautifulSoup4`, `Requests`
-* **RAG & LLM:** `LangChain` / `LlamaIndex` (or similar)
-* **LLM:** A local, open-source model (e.g., Llama 3, Mistral)
-* **Vector Store:** `ChromaDB` / `FAISS`
+* **RAG & LLM:** `LlamaIndex`
+* **LLM:** Mistral:latest
+* **Vector Store:** `ChromaDB`
 * **Web UI:** `Streamlit`
 * **Prototyping:** `Jupyter Notebook`
 
@@ -52,7 +52,13 @@ This is the core of the project, which will be built using a Retrieval-Augmented
 ## Preliminary Roadmap
 
 -   [ ] **Scraper:** Develop a stable scraper for the JLA website to fetch paper URLs and metadata.
--   [ ] **RAG Proof-of-Concept:** Build the end-to-end RAG pipeline in the Jupyter Notebook (Load, Chunk, Embed, Retrieve, Generate).
+-   [ ] **RAG Proof-of-Concept:** Build the end-to-end RAG pipeline. Available via `ingest.py` and `answer.py`
+(Load, Chunk, Embed, Retrieve, Generate).
 -   [ ] **Model Selection:** Test and select a suitable local LLM that balances performance with resource requirements.
--   [ ] **Streamlit App:** Port the notebook logic into a functional `streamlit` application.
+-   [ ] **Streamlit App:** Port the logic into a functional `streamlit` application. With`app.py`
 -   [ ] **Refinement:** Improve scraping stability, chunking strategy, and overall answer quality.
+
+## Working Example
+![alt text](readme_assets/app.py_v1.png)
+
+
