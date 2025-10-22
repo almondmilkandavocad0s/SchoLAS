@@ -11,7 +11,7 @@ CHROMA_DIR = os.getenv("CHROMA_DIR", "./data/chroma")
 EMBED_MODEL = os.getenv("EMBED_MODEL", "nomic-embed-text")
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "400"))
-CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "100"))
+CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "150"))
 
 def extract_chunks(pdf: Path):
     with fitz.open(pdf) as doc:
@@ -24,7 +24,7 @@ def extract_chunks(pdf: Path):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python3 ingest.py data/docs")
+        print("Usage: python3 ingest.py rag_corpus/Vol. 12 No. 1 (2025): Special Section on Generative AI and Learning Analytics")
         sys.exit(1)
 
     in_path = Path(sys.argv[1])

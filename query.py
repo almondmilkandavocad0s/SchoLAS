@@ -8,7 +8,7 @@ CHROMA_DIR = os.getenv("CHROMA_DIR", "./data/chroma")
 EMBED_MODEL = os.getenv("EMBED_MODEL", "nomic-embed-text")
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 TOP_K = int(os.getenv("TOP_K", "4"))
-MIN_SCORE = float(os.getenv("MIN_SCORE", "0.25"))
+MIN_SCORE = float(os.getenv("MIN_SCORE", "0.3"))
 
 
 client = chromadb.PersistentClient(path=CHROMA_DIR)
