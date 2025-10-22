@@ -51,11 +51,8 @@ def build_prompt(query, hits):
 
     cite_note = ", ".join(citations)
 
-    system = textwrap.dedent(f"""
-    You are an expert research assistant. Answer the user's question using only the CONTEXT provided.
-    - Cite your sources like (Filename p.Page) at the end of each sentence you claim.
-    - If the answer is not fully supported, say: "I don't know based on the provided documents."
-    """).strip()
+    with open("prompt.txt", "r", encoding="utf-8") as f:
+        system = f.read().strip()
 
     user = textwrap.dedent(f"""
     QUESTION:
@@ -64,10 +61,6 @@ def build_prompt(query, hits):
     CONTEXT:
     {context}
 
-    INSTRUCTIONS:
-    - Be concise.
-    - Include source references like ({cite_note}) after each supported claim.
-    - Use content verbatim if appropriate.
     """).strip()
 
     return f"<SYSTEM>\n{system}\n</SYSTEM>\n<USER>\n{user}\n</USER>"
